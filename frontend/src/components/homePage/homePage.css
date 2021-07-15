@@ -17,3 +17,7 @@
   text-align: right;
   box-shadow: 4px 4px #a24e12;
 }
+
+.book:hover{
+  transform: scale(1.05);
+}
