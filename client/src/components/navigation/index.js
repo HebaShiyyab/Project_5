@@ -26,7 +26,7 @@ const Navigation = () => {
     if (!KeyWord) {
       e.preventDefault();
     } else {
-      Axios.get(`/book/search?KeyWord=${KeyWord}`).then(
+      Axios.get(`http://localhost:5000/book/search?KeyWord=${KeyWord}`).then(
         (res) => {
           dispatch(setResult(res.data));
           history.push("/result");
@@ -63,12 +63,12 @@ const Navigation = () => {
           Admin Page
         </Link> */}
 
-      {/* {token&&decoded.role_id === 1 ?  (
+      {token&&decoded.role_id === 1 ?  (
         
         <Link to="/admin" className="Link" style={{display:"inherit"}}>
           Admin Page
         </Link>
-      ) : ""} */}
+      ) : ""}
 
       <Link to="/contact" className="Link">
         Contact

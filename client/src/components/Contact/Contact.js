@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./contact.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { FloatingWhatsApp } from "react-floating-whatsapp-button";
 import "react-floating-whatsapp-button/dist/index.css";
 
@@ -11,7 +12,7 @@ export default function ContactUs() {
 
   const contact = () => {
     axios
-      .post("/ContactUs", {
+      .post("http://localhost:5000/ContactUs", {
         fullName: fullName,
         email: email,
         message: message,
@@ -43,60 +44,58 @@ export default function ContactUs() {
       </div>
       <div className="contact">
         <table className="table-contact">
-          <tbody>
-            <tr>
-              <td>
-                <label>Full Name :</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="full Name here "
-                  onChange={(e) => {
-                    setFullName(e.target.value);
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>Email :</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="email here "
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label>Message: </label>
-              </td>
-              <td>
-                <textarea
-                  rows="3"
-                  placeholder="message here "
-                  onChange={(e) => {
-                    setMessage(e.target.value);
-                  }}
-                />
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <button className="button" onClick={contact}>
-                  send
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tr>
+            <td>
+              <label>Full Name :</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="full Name here "
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Email :</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="email here "
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Message: </label>
+            </td>
+            <td>
+              <textarea
+                rows="3"
+                placeholder="message here "
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button className="button" onClick={contact}>
+                send
+              </button>
+            </td>
+          </tr>
         </table>
-        <FloatingWhatsApp />
+        <FloatingWhatsApp/>
       </div>
     </>
   );

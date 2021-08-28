@@ -1,35 +1,27 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
 import AddCategory from "./AddCategory";
 import EditCategory from "./EditCategory";
 import DeleteCategory from "./DeleteCategory";
-import "./Category.css";
+import "./Category.css" ;
+
+import { Link, Route } from "react-router-dom";
 
 function CategoryPage(role, token) {
   return (
     <div className="CategoryPage">
       <>
         <button className="admin-button">
-          <Link
-            to="/AddCategory"
-            style={{ textDecoration: "none", color: "rgb(31, 38, 59)" }}
-          >
+          <Link to="/AddCategory" style={{ textDecoration: "none" ,color:"rgb(31, 38, 59)"}}>
             <div>Add Category</div>
           </Link>
         </button>
         <button className="admin-button">
-          <Link
-            to="/EditCategory"
-            style={{ textDecoration: "none", color: "rgb(31, 38, 59)" }}
-          >
+          <Link to="/EditCategory" style={{ textDecoration: "none" ,color:"rgb(31, 38, 59)"}}>
             <div>Edit Category</div>
           </Link>
         </button>
         <button className="admin-button">
-          <Link
-            to="/DeleteCategory"
-            style={{ textDecoration: "none", color: "rgb(31, 38, 59)" }}
-          >
+          <Link to="/DeleteCategory" style={{ textDecoration: "none" ,color:"rgb(31, 38, 59)" }}>
             <div>Delete Category</div>
           </Link>
         </button>

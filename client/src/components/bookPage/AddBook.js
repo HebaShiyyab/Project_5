@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 import "./bookPage.css";
 
 function AddBookPage() {
@@ -11,12 +12,17 @@ function AddBookPage() {
   const [pages, setPages] = useState("");
   const [price, setPrice] = useState("");
   const [author, setAuthor] = useState("");
+  const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(undefined);
-
+  const state = useSelector((state) => {
+    return {
+      token: state.login.token,
+    };
+  });
   const AddBook = () => {
     axios
       .post(
-        "/book",
+        "http://localhost:5000/book",
         {
           book_img: book_img,
           title: title,
@@ -35,9 +41,12 @@ function AddBookPage() {
       )
       .then((res) => {
         setSuccess(true);
+        setMessage('add successfully')
       })
       .catch((err) => {
+        console.log(err);
         setSuccess(false);
+        setMessage('not added ')
         throw err;
       });
   };
@@ -47,7 +56,6 @@ function AddBookPage() {
         Add book
       </h1>
       <table className="tableAdd">
-      <thead>
         <tr>
           <th>URL picture</th>
           <th>
@@ -66,7 +74,7 @@ function AddBookPage() {
           <th>
             <input
               type="text"
-              placeholder="Title here "
+              placeholder="title here "
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
@@ -79,7 +87,7 @@ function AddBookPage() {
             {" "}
             <input
               type="text"
-              placeholder="Description here "
+              placeholder="description here "
               onChange={(e) => {
                 setDescription(e.target.value);
               }}
@@ -92,7 +100,7 @@ function AddBookPage() {
             {" "}
             <input
               type="text"
-              placeholder="Publisher here "
+              placeholder="publisher here "
               onChange={(e) => {
                 setPublisher(e.target.value);
               }}
@@ -104,7 +112,7 @@ function AddBookPage() {
           <th>
             <input
               type="text"
-              placeholder="Edition here "
+              placeholder="edition here "
               onChange={(e) => {
                 setEdition(e.target.value);
               }}
@@ -112,11 +120,11 @@ function AddBookPage() {
           </th>
         </tr>
         <tr>
-          <th>Pages Number</th>
+          <th>pages Number</th>
           <th>
             <input
               type="Number"
-              placeholder="Pages here "
+              placeholder="pages here "
               onChange={(e) => {
                 setPages(e.target.value);
               }}
@@ -128,7 +136,7 @@ function AddBookPage() {
           <th>
             <input
               type="num"
-              placeholder="Price here "
+              placeholder="price here "
               onChange={(e) => {
                 setPrice(e.target.value);
               }}
@@ -140,7 +148,7 @@ function AddBookPage() {
           <th>
             <input
               type="text"
-              placeholder="Author here "
+              placeholder="author here "
               onChange={(e) => {
                 setAuthor(e.target.value);
               }}
@@ -155,7 +163,7 @@ function AddBookPage() {
             </button>
           </th>
         </tr>
-        </thead>
+            <tr> <th>{message} </th></tr>
       </table>
     </div>
   );
