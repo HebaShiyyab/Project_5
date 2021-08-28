@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="C:\Users\roauu\OneDrive\Pictures\Screenshots\BooksWorms.png" alt="Project logo"></a>
+ <img width=200px height=200px src="https://www.pinclipart.com/picdir/big/204-2041426_library-clipart-bookworm-clip-art-book-worm-png.png" alt="Project logo"></a>
 </p>
 
 <h3 align="center">BooksWorms</h3>

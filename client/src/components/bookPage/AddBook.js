@@ -13,12 +13,6 @@ function AddBookPage() {
   const [price, setPrice] = useState("");
   const [author, setAuthor] = useState("");
   const [message, setMessage] = useState("");
-  const [success, setSuccess] = useState(undefined);
-  const state = useSelector((state) => {
-    return {
-      token: state.login.token,
-    };
-  });
   const AddBook = () => {
     axios
       .post(
@@ -40,16 +34,14 @@ function AddBookPage() {
         }
       )
       .then((res) => {
-        setSuccess(true);
-        setMessage('add successfully')
+        setMessage("add successfully");
       })
       .catch((err) => {
-        console.log(err);
-        setSuccess(false);
-        setMessage('not added ')
+        setMessage("not added ");
         throw err;
       });
   };
+
   return (
     <div className="AddBook">
       <h1 style={{ color: "#a24e12", marginLeft: "39rem", marginTop: "2rem" }}>
@@ -123,7 +115,7 @@ function AddBookPage() {
           <th>pages Number</th>
           <th>
             <input
-              type="Number"
+              type="number"
               placeholder="pages here "
               onChange={(e) => {
                 setPages(e.target.value);
@@ -135,7 +127,7 @@ function AddBookPage() {
           <th>Price</th>
           <th>
             <input
-              type="num"
+              type="number"
               placeholder="price here "
               onChange={(e) => {
                 setPrice(e.target.value);
@@ -163,7 +155,9 @@ function AddBookPage() {
             </button>
           </th>
         </tr>
-            <tr> <th>{message} </th></tr>
+        <tr>
+          <th>{message}</th>
+        </tr>
       </table>
     </div>
   );

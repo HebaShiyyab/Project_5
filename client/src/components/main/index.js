@@ -15,33 +15,30 @@ import EditCategory from "../Category/EditCategory";
 import DeleteCategory from "../Category/DeleteCategory";
 import Category from "../bookPage/Category";
 import SearchResult from "../searchResult/SearchResult";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Author from "../bookPage/Author";
-
+import BookDetails from "../bookPage/bookDetails";
 
 const Main = () => {
   return (
     <>
       <Navigation />
       <div className="Main">
+        <Route exact path="/" render={() => <HomePage />} />
         <Route exact path="/login" render={() => <Login />} />
-        <Route exact path="/Register" render={() => <SignUp />} />
-        <Route exact path="/home" render={() => <HomePage />} />
-        <Route exact path="/contact" render={() => <Contact />} />
-        <Route exact path="/admin" render={() => <Admin />} />
-        <Route exact path="/AddBook" render={() => <AddBookPage />} />
-        <Route exact path="/EditBook" render={() => <EditBookPage />} />
-        <Route exact path="/DeleteBook" render={() => <DeleteBookPage />} />
-        <Route exact path="/Category" render={() => <Category />} />
-        <Route exact path="/AddCategory" render={() => <AddCategory />} />
-        <Route exact path="/EditCategory" render={() => <EditCategory />} />
-        <Route exact path="/DeleteCategory" render={() => <DeleteCategory />} />
-        <Route exact path="/authors" render={() => <Author />} />
-        <Route exact path="/result" render={() => <SearchResult />} />
-        {/* <Route exact path="/logout" render={() => <Logout />} /> */}
+        <Route path="/Register" render={() => <SignUp />} />
+        <Route path="/contact" render={() => <Contact />} />
+        <Route path="/admin" render={() => <Admin />} />
+        <Route path="/AddBook" render={() => <AddBookPage />} />
+        <Route path="/EditBook" render={() => <EditBookPage />} />
+        <Route path="/DeleteBook" render={() => <DeleteBookPage />} />
+        <Route path="/Category" render={() => <Category />} />
+        <Route path="/AddCategory" render={() => <AddCategory />} />
+        <Route path="/EditCategory" render={() => <EditCategory />} />
+        <Route path="/DeleteCategory" render={() => <DeleteCategory />} />
+        <Route path="/authors" render={() => <Author />} />
+        <Route path="/result" render={() => <SearchResult />} />
+        <Route path="/bookDetails" render={() => <BookDetails />} />
 
-        {/* <Route exact path="/Register" render={() => <Category />} /> 
-        <Route exact path="/Register" render={() => <Authors />} />  */}
       </div>
     </>
   );

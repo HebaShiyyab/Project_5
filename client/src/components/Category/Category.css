@@ -1,107 +1,111 @@
-.admin-button{
-    background-color:white;
-    display:grid;
-    padding:0.7em 6.7em;
-    margin: 2rem 22rem 0;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:serif;
-    font-weight:1300;
-    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
-    text-align:center;
-    position:relative;
-    color :black;
-    width: 35rem;
-    margin-bottom: 2rem;
-    }
-
-.admin-button:active{
- background-color: #a24e12;
-
-  }
-
-  .categoryTable{
-    font-family: sans-serif;
-    vertical-align: middle;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: #a24e12;
-    margin-left: 28rem;
-    margin-top: 3rem;
-  }
-  .category-button{
-    font-family: sans-serif;
-    background-color: #a24e12;
-    color: white;
-    height: 3rem;
-    width: 10rem;
-    margin-left: 5rem;
-    position: relative;
-    border-radius: 0.5rem;
-    margin-top: 2rem;
-
-  }
-.CategoryPage{
-    color :black;
+.admin-button {
+  background-color: white;
+  display: grid;
+  padding: 0.7em 6.7em;
+  margin: 2rem 22rem 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: serif;
+  font-weight: 1300;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  position: relative;
+  color: black;
+  width: 35rem;
+  margin-bottom: 2rem;
 }
-.tableEditCategory{
-    font-family: sans-serif;
-    vertical-align: middle;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: #a24e12;
-    margin-left: 28rem;
-    margin-top: 3rem;
-}
-.tableDeleteCategory{
-    font-family: sans-serif;
-    vertical-align: middle;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    color: #a24e12;
-    margin-left: 28rem;
-    margin-top: 3rem;
-}
-.EditCategoryButton{
-    font-family: sans-serif;
-    background-color: #a24e12;
-    color: white;
-    height: 3rem;
-    width: 10rem;
-    margin-left: 5rem;
-    position: relative;
-    border-radius: 0.5rem; 
-    margin-top: 2rem;
 
+.admin-button:active {
+  background-color: #a24e12;
 }
-.DeleteCategoryButton{
-    font-family: sans-serif;
-    background-color: #a24e12;
-    color: white;
-    height: 3rem;
-    width: 10rem;
-    margin-left: 5rem;
-    position: relative;
-    border-radius: 0.5rem; 
-    margin-top: 2rem;
 
+.categoryTable {
+  font-family: sans-serif;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #a24e12;
+  margin-left: 28rem;
+  margin-top: 3rem;
 }
-.categoryDetails{
-    border-style: solid;
-    height: fit-content;
-    padding: 1rem;
-    border-color: #a24e12;
-    display: inline-block;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 32px;
+.category-button {
+  font-family: sans-serif;
+  background-color: #a24e12;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  margin-left: 5rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
 
-  }
-  .imgCategoryDetails{
-    height: 200px;
-    width: 200px;
+.CategoryPage {
+  color: black;
+}
+
+.tableEditCategory {
+  font-family: sans-serif;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #a24e12;
+  margin-left: 28rem;
+  margin-top: 3rem;
+}
+
+.tableDeleteCategory {
+  font-family: sans-serif;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #a24e12;
+  margin-left: 28rem;
+  margin-top: 3rem;
+}
+
+.EditCategoryButton {
+  font-family: sans-serif;
+  background-color: #a24e12;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  margin-left: 5rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.DeleteCategoryButton {
+  font-family: sans-serif;
+  background-color: #a24e12;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  margin-left: 5rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+
+.categoryDetails {
+  border-style: solid;
+  height: fit-content;
+  padding: 1rem;
+  border-color: #a24e12;
+  display: inline-block;
+  text-align: right;
+  margin-top: 30px;
+  margin-left: 32px;
+}
+
+.imgCategoryDetails {
+  height: 200px;
+  width: 200px;
 }

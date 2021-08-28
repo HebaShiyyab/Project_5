@@ -9,8 +9,8 @@
   justify-content: center;
   gap: 2rem;
   font-size: 1.25rem;
+  z-index: 1;
 }
-
 
 .Link {
   text-decoration: none;

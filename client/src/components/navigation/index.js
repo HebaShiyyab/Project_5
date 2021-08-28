@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,52 +6,57 @@ import { setResult } from "../../reducers/SearchResult";
 import Axios from "axios";
 import "./navigation.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import jwt from "jsonwebtoken";
+import jwt_decode from "jwt-decode";
 const token = localStorage.getItem("token");
-const decoded = jwt.decode(token);
 
 const Navigation = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [navbar, setNavbar] = useState(false);
 
   const [KeyWord, setKeyWord] = useState("");
 
   const state = useSelector((state) => {
     return {
       searched_book: state.searchResult.result,
+      token: state.login.token,
     };
   });
+  const [decoded, setDecoded] = useState({});
+
+  useEffect(() => {
+    if (state.token) {
+      setDecoded(jwt_decode(state.token));
+    }
+  }, [state.token]);
 
   const handleClick = (e) => {
     if (!KeyWord) {
       e.preventDefault();
     } else {
-      Axios.get(`http://localhost:5000/book/search?KeyWord=${KeyWord}`).then(
-        (res) => {
-          dispatch(setResult(res.data));
-          history.push("/result");
-        }
-      );
+      Axios.get(`/book/search?KeyWord=${KeyWord}`).then((res) => {
+        dispatch(setResult(res.data));
+        history.push("/result");
+      });
     }
   };
-  // const token1 = localStorage.getItem("token");
 
   return (
     <div className="NavBar">
-      <Link to="/home" className="Link">
+      <Link to="/" className="Link">
         {" "}
         <img
           src="https://www.pinclipart.com/picdir/big/204-2041426_library-clipart-bookworm-clip-art-book-worm-png.png"
           style={{
             hight: "75px",
             width: "75px",
-            cursor:"pointer" 
-          }}alt="a book worm"
+            cursor: "pointer",
+          }}
+          alt="a book worm"
         />
       </Link>
-      <Link to="/home" className="Link">
-    
-          Home
+      <Link to="/" className="Link">
+        Home
       </Link>
       <Link to="/Category" className="Link">
         Category
@@ -59,17 +64,13 @@ const Navigation = () => {
       <Link to="/authors" className="Link">
         Author
       </Link>
-      {/* <Link to="/admin" className="Link">
-          Admin Page
-        </Link> */}
-
-      {token&&decoded.role_id === 1 ?  (
-        
-        <Link to="/admin" className="Link" style={{display:"inherit"}}>
+      {state.token && decoded && decoded.role_id === 1 ? (
+        <Link to="/admin" className="Link" style={{ display: "inherit" }}>
           Admin Page
         </Link>
-      ) : ""}
-
+      ) : (
+        ""
+      )}
       <Link to="/contact" className="Link">
         Contact
       </Link>

@@ -31,31 +31,22 @@ const Login = () => {
       .post("http://localhost:5000/login", { email, password })
       .then((result) => {
         localStorage.setItem("token", result.data);
-
-        var tokenBeforeDecode = result.data;
-        var decoded = jwt_decode(tokenBeforeDecode);
-
-        if (decoded.role_id === 1) {
-          history.push("/home");
-          dispatch(setToken(result.data));
-        } else if (decoded.role_id === 2) {
-          history.push("/home");
-          dispatch(setToken(result.data));
-        }
+        dispatch(setToken(result.data));
+        history.push("/");
       })
       .catch((err) => {
         setMessage(err.response.data);
       });
   };
   const ResponseGoogle = (response) => {
-    console.log(response.accessToken)
-    setToken(response.accessToken);
-    localStorage.setItem("token", response.accessToken);
+    localStorage.setItem("token", state.token);
+    dispatch(setToken(response.accessToken));
   };
   return (
     <div className="login">
       <h1>Login Page</h1>
       <table>
+      <tbody>
         <tr>
           <td>
             <label>Email</label>
@@ -93,18 +84,19 @@ const Login = () => {
               Login
             </button>
               <p> or </p>
-            <div className="google">
-              <GoogleLogin
-                clientId="1018427859000-rr1mqigkk7fvghqfnh85ph78eru3lo8m.apps.googleusercontent.com"
-                buttonText="Login"
-                onSuccess={ResponseGoogle}
-                onFailure={ResponseGoogle}
-                cookiePolicy={'single_host_origin'}
-              />
-            </div>
-          </td>
-        </tr>
-        <p>{message}</p>
+              <div className="google">
+                <GoogleLogin
+                  clientId="1018427859000-rr1mqigkk7fvghqfnh85ph78eru3lo8m.apps.googleusercontent.com"
+                  buttonText="Login"
+                  onSuccess={ResponseGoogle}
+                  onFailure={ResponseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                />
+              </div>
+            </td>
+          </tr>
+        <tr><td>{message}</td></tr>
+        </tbody>
         <p>
           Sign Up for website <Link to="/register">Register</Link>
         </p>

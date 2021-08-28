@@ -1,37 +1,45 @@
+.all-authors{
+  justify-content: center;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+}
+.author {
 
-.author{
-    border-style: solid;
-    height: fit-content;
-    padding: 1rem;
-    border-color: #a24e12;
-    display: inline-block;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 32px;
-  }
-  .authorDetails{
-    border-style: solid;
-    height: fit-content;
-    padding: 1rem;
-    border-color: #a24e12;
-    display: inline-block;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 32px;
-  
-  }
-  .imgAuthorDetails{
-      height: 200px;
-      width: 200px;
-  }
-  .authorButton{
-    font-family: sans-serif;
-    background-color: #a24e12;
-    color: white;
-    height: 3rem;
-    width: 10rem;
-    margin-left: 59rem;
-    position: relative;
-    border-radius: 0.5rem;
-    margin-top: 2rem;
-  }
+  border-style: solid;
+  height: fit-content;
+  padding: 1rem;
+  border-color: #a24e12;
+  display: inline-block;
+  text-align: right;
+  margin-top: 30px;
+  margin-left: 32px;
+}
+.authorDetails {
+  border-style: solid;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 1rem;
+  border-color: #a24e12;
+  display: inline-block;
+  text-align: right;
+  box-shadow: 4px 4px #a24e12;
+  margin-top: 30px;
+  margin-left: 32px;
+}
+.authorDetails:hover {
+  transform: scale(1.05);
+}
+.imgAuthorDetails {
+  height: 200px;
+  width: 200px;
+}
+.authorButton {
+  font-family: sans-serif;
+  background-color: #a24e12;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  margin-left: 59rem;
+  position: relative;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}

@@ -12,10 +12,10 @@
   border-radius: 0.5rem;
   color: #a24e12;
   margin-left: 34%;
-
 }
 
-.table td, .table th {
+.table td,
+.table th {
   padding: 0.75rem;
   vertical-align: middle;
   font-size: 1.25rem;

@@ -81,7 +81,6 @@ const updateBooksByID = (req, res) => {
     pages,
     price,
     author,
-    id,
   ];
 
   connection.query(query, data, (err, result) => {

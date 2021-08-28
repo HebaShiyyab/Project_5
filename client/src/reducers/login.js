@@ -6,6 +6,7 @@ const initialState = {
 const login = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_TOKEN":
+      console.log("payload", payload);
       return { token: payload };
     case "SET_User":
       return { user: payload };

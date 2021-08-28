@@ -18,9 +18,13 @@ const DeleteCategory = () => {
           authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
-      .then((res) => {    setMessage('deleted successfully')})
+      .then((res) => {
+        setMessage("deleted successfully");
+      })
       .catch((err) => {
-   setMessage('not deleted ')      });
+        setMessage("not deleted ");
+        throw err;
+      });
   };
 
   return (
@@ -28,21 +32,36 @@ const DeleteCategory = () => {
       <h1 style={{ color: "#a24e12", marginLeft: "32rem", marginTop: "2rem" }}>
         Delete Category
       </h1>
-      <table className='tableDeleteCategory' >
-      <tr><th>Category Id</th>
-      <th>
-      <input
-        type="Number"
-        placeholder="Category_id here "
-        onChange={(e) => {
-          setCategory_id(e.target.value);
-        }}
-      /></th></tr>
-      <tr><th></th>
-      <th>
-      <button className=" DeleteCategoryButton" onClick={DeleteCategories}>
-        Delete Category
-      </button></th></tr><tr> <th>{message} </th></tr></table>
+      <table className="tableDeleteCategory">
+        <tbody>
+          <tr>
+            <th>Category Id</th>
+            <th>
+              <input
+                type="number"
+                placeholder="Category_id here "
+                onChange={(e) => {
+                  setCategory_id(e.target.value);
+                }}
+              />
+            </th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>
+              <button
+                className=" DeleteCategoryButton"
+                onClick={DeleteCategories}
+              >
+                Delete Category
+              </button>
+            </th>
+          </tr>
+          <tr>
+            <th>{message}</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

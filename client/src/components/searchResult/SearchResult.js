@@ -1,16 +1,15 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./SearchResult.css";
 
 export default function SearchBar() {
-  const dispatch = useDispatch();
-
-  const state = useSelector(state => state.searchResult.result);
+  const state = useSelector((state) => state.searchResult.result);
 
   return (
     <div className="search">
-        {state.map((elem, index) => {
-          return <div key={index} className="search-result">
+      {state.map((elem, index) => {
+        return (
+          <div key={index} className="search-result">
             <img
               className=""
               src={elem.book_img}
@@ -23,10 +22,12 @@ export default function SearchBar() {
             <p className="">الوصف: {elem.description}</p>
             <p className="">السعر: {elem.price}</p>
             <div className="buttonBuyAdd">
-            <button className="addButton">Add to favorite</button>
-            <button className="buyButton">Buy now</button></div>
+              <button className="addButton">Add to favorite</button>
+              <button className="buyButton">Buy now</button>
+            </div>
           </div>
-        })}
+        );
+      })}
     </div>
   );
 }
